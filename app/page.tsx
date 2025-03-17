@@ -1,6 +1,6 @@
 "use client";
 import LandingNav from "@/components/includes/Landing-Nav";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "@/components/includes/Footer";
 import LandingCarousel from "@/components/LandingCarousel";
 import LandingLayout from "@/components/LandingLayout";
@@ -8,6 +8,19 @@ import { motion } from "framer-motion";
 import { FaqAccordion } from "@/components/FaqAccordion";
 
 const Landing = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsMobile(window.innerWidth <= 768); // Adjust breakpoint as needed
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => window.removeEventListener("resize", checkScreenSize);
+  }, []);
+
   return (
     <>
       {/* Landing Navbar */}
@@ -171,10 +184,9 @@ const Landing = () => {
         {/* cards */}
         <div className="md:w-[900px] flex flex-col gap-6">
           <motion.div
-            initial={{ opacity: 0, translateX: "-100%" }}
-            whileInView={{ opacity: 1, translateX: "0" }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: false, amount: 0.2 }}
+            initial={isMobile ? {} : { opacity: 0, translateX: "-100%" }}
+            whileInView={isMobile ? {} : { opacity: 1, translateX: "0" }}
+            transition={{ duration: 0.5 }}
             className="bg-white shadow-xl overflow-hidden rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
             <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
@@ -199,10 +211,9 @@ const Landing = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, translateX: "100%" }}
-            whileInView={{ opacity: 1, translateX: "0" }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 0.8 }}
+            initial={isMobile ? {} : { opacity: 0, translateX: "-100%" }}
+            whileInView={isMobile ? {} : { opacity: 1, translateX: "0" }}
+            transition={{ duration: 0.5 }}
             className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
             <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
@@ -231,10 +242,9 @@ const Landing = () => {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, translateX: "-100%" }}
-            whileInView={{ opacity: 1, translateX: "0" }}
-            viewport={{ once: false, amount: 0.2 }}
-            transition={{ duration: 1 }}
+            initial={isMobile ? {} : { opacity: 0, translateX: "-100%" }}
+            whileInView={isMobile ? {} : { opacity: 1, translateX: "0" }}
+            transition={{ duration: 0.5 }}
             className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
             <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
