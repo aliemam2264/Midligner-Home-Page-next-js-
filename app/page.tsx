@@ -344,7 +344,7 @@ const Landing = () => {
             </div>
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
-                src="/images/Diastema.png"
+                src="/images/diastema.png"
                 className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
               <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
