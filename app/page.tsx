@@ -1,103 +1,377 @@
-import Image from "next/image";
+"use client";
+import LandingNav from "@/components/includes/Landing-Nav";
+import React from "react";
+import Footer from "@/components/includes/Footer";
+import LandingCarousel from "@/components/LandingCarousel";
+import LandingLayout from "@/components/LandingLayout";
+import { motion } from "framer-motion";
+import { FaqAccordion } from "@/components/FaqAccordion";
 
-export default function Home() {
+const Landing = () => {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <>
+      {/* Landing Navbar */}
+      <LandingNav />
+      <LandingCarousel />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+      {/* who we are */}
+      <div className="bg-white py-20">
+        <LandingLayout>
+          <div className="h-[327px] flex flex-col md:flex-row w-full gap-16 justify-center  items-center">
+            <div className="flex flex-col items-center md:items-start gap-6">
+              <h1 className="text-[#262261] text-3xl">Who Are We?</h1>
+              <p className="text-[#1F1E1E] text-xl">
+                Get to know more about mid.ligner
+              </p>
+            </div>
+
+            <div className="relative h-[327px] aspect-video">
+              <iframe
+                className="absolute inset-0 w-full h-full border-none"
+                src="https://www.youtube.com/embed/LlcCa-H3dDo"
+                allowFullScreen
+              ></iframe>
+            </div>
+          </div>
+        </LandingLayout>
+      </div>
+
+      {/* work flow */}
+      <div className="bg-[#ECEDF5] py-16">
+        <LandingLayout>
+          <div className="bg-[#ECEDF5] flex flex-col md:flex-row gap-6 items-center justify-center">
+            {/* cards */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.5 }}
+              className="relative group w-[230px] h-[270px]   bg-[#FCFCFD] rounded-lg p-4 flex flex-col items-center justify-center shadow-md hover:bg-[#262261] transision duration-300"
+            >
+              {/* Background Tooth Icon (Faded) */}
+              <div className="absolute top-3 left-3 opacity-20">
+                <img
+                  src="/images/scanningVector.png"
+                  className="w-[45px] h-[52px]"
+                />
+              </div>
+
+              {/* Center Tooth Icon */}
+              <img src="/images/scanning.png" className="w-[144px] h-[144px]" />
+
+              {/* Scanning Text */}
+              <p className="text-[#262261] text-[20px] font-medium text-lg group-hover:text-white group-hover:text-[22px] transision duration-300">
+                Scanning
+              </p>
+
+              {/* Bottom Number */}
+              <img
+                src="/images/01.png"
+                className="w-[44px] h-[34px] absolute bottom-2 right-2 group-hover:w-[50px] group-hover:h-[40px] transision duration-300"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1 }}
+              className="relative group w-[230px] h-[270px] bg-[#FCFCFD] rounded-lg p-4 flex flex-col items-center justify-center shadow-md hover:bg-[#262261] transision duration-300"
+            >
+              {/* Background Tooth Icon (Faded) */}
+              <div className="absolute top-3 left-3">
+                <img
+                  src="/images/platformVector.png"
+                  className="w-[45px] h-[52px]"
+                />
+              </div>
+
+              {/* Center Tooth Icon */}
+              <img src="/images/platform.png" className="w-[144px] h-[144px]" />
+
+              {/* digital platform Text */}
+              <p className="text-[#262261] text-[20px] font-medium text-lg group-hover:text-white group-hover:text-[22px] transision duration-300">
+                Digital Platform
+              </p>
+
+              {/* Bottom Number */}
+              <img
+                src="/images/02.png"
+                className="w-[44px] h-[34px] absolute bottom-2 right-2 group-hover:w-[50px] group-hover:h-[40px] transision duration-300"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.5 }}
+              className="relative group w-[230px] h-[270px] bg-[#FCFCFD] rounded-lg p-4 flex flex-col items-center justify-center shadow-md hover:bg-[#262261] transision duration-300"
+            >
+              {/* Background Tooth Icon (Faded) */}
+              <div className="absolute top-3 left-3">
+                <img
+                  src="/images/percisionVector.png"
+                  className="w-[45px] h-[52px]"
+                />
+              </div>
+
+              {/* Center Tooth Icon */}
+              <img
+                src="/images/percision.png"
+                className="w-[144px] h-[144px]"
+              />
+
+              {/* Percition software Text */}
+              <p className="text-[#262261] font-normal text-lg group-hover:text-white group-hover:text-[22px] group-hover:text-center transision duration-300">
+                Percision Software
+              </p>
+
+              {/* Bottom Number */}
+              <img
+                src="/images/03.png"
+                className="w-[44px] h-[34px] absolute bottom-2 right-2 group-hover:w-[50px] group-hover:h-[40px] transision duration-300"
+              />
+            </motion.div>
+          </div>
+        </LandingLayout>
+      </div>
+
+      {/* Features & Advantages */}
+      <div className="bg-white flex flex-col items-center gap-12 py-20">
+        <span className="bg-white px-4 py-3 shadow-lg rounded-xl text-sm text-[#262261] flex items-center gap-1">
+          <img src="/images/star.png" />
+          Features & Advantages
+        </span>
+        {/* features */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="w-[350px] md:w-[880px]"
+        >
+          <img src="/images/features.png" />
+        </motion.div>
+
+        {/* cards */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+          className="flex flex-col gap-4 items-center md:flex-row"
+        >
+          <img src="/images/bink-card.png" />
+          <img src="/images/blue-card.png" />
+        </motion.div>
+      </div>
+
+      {/* digital workflow */}
+      <div className="bg-white flex flex-col items-center gap-12 py-20">
+        <span className="bg-white px-4 py-3 shadow-xl rounded-xl text-sm text-[#262261] flex items-center gap-1">
+          <img src="/images/digital.png" className="w-[15] h-5" />
+          Digital Workflow
+        </span>
+        {/* cards */}
+        <div className="md:w-[900px] flex flex-col gap-6">
+          <motion.div
+            initial={{ opacity: 0, translateX: "-100%" }}
+            whileInView={{ opacity: 1, translateX: "0" }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: false, amount: 0.2 }}
+            className="bg-white shadow-xl overflow-hidden rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+              <h2 className="text-[#262261] text-xl">Booking your 3D Scan</h2>
+              <p>
+                Now you can schedule your transformation appointment and
+                experience the latest in dental technology with the Medit
+                intraoral scanner at one of our Mid.ligner affiliated clinics.
+              </p>
+              <button className="bg-[#262261] text-white rounded-lg py-1 w-[263px]">
+                Books 3D Scan Appointment
+              </button>
+            </div>
+            <div className="flex items-end h-auto md:h-[200px] ">
+              <span className="text-4xl font-extrabold text-[#A0A5CB]   ">
+                01
+              </span>
+            </div>
+            <div className="w-[276px]">
+              <img src="/images/card_1.png" />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, translateX: "100%" }}
+            whileInView={{ opacity: 1, translateX: "0" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 0.8 }}
+            className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
-            Read our docs
-          </a>
+            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+              <h2 className="text-[#262261] text-xl">
+                Get a Glimpse of Your Future Smile
+              </h2>
+              <p>
+                Using the digital scan of your teeth, we’ll create a tailored
+                treatment plan featuring a preview of your future smile using
+                highly precision software designed by orthodontists, along with
+                a comprehensive diagnosis, predicted results, and treatment
+                timeline.
+              </p>
+              <button className="bg-[#262261] text-white rounded-lg py-1 w-[263px]">
+                Books 3D Scan Appointment
+              </button>
+            </div>
+            <div className="flex items-end h-auto md:h-[200px] ">
+              <span className="text-4xl font-extrabold text-[#A0A5CB]   ">
+                02
+              </span>
+            </div>
+            <div className="w-[276px]">
+              <img src="/images/card_2.png" />
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, translateX: "-100%" }}
+            whileInView={{ opacity: 1, translateX: "0" }}
+            viewport={{ once: false, amount: 0.2 }}
+            transition={{ duration: 1 }}
+            className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
+          >
+            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+              <h2 className="text-[#262261] text-xl">Step In. Smile Out!</h2>
+              <p className="text-[#5F5E5D]">Production and Delivery</p>
+              <p>
+                Now you can schedule your transformation appointment and
+                experience the latest in dental technology with the Medit
+                intraoral scanner at one of our Mid.ligner affiliated clinics.
+              </p>
+            </div>
+            <div className="flex items-end h-auto md:h-[200px] ">
+              <span className="text-4xl font-extrabold text-[#A0A5CB]   ">
+                03
+              </span>
+            </div>
+            <div className="w-[276px]">
+              <img src="/images/card_3.png" />
+            </div>
+          </motion.div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </div>
+
+      {/* treatable cases */}
+      <div
+        className="bg-white flex flex-col items-center gap-12 py-20"
+        id="treatable-cases"
+      >
+        <span className="bg-white px-4 py-3 shadow-xl rounded-xl text-sm text-[#262261] flex items-center gap-1">
+          <img src="/images/teeth.png" className="w-5 h-5" />
+          Treatable Cases
+        </span>
+        {/* cards */}
+        <div className="flex flex-col gap-4 mx-2 md:mx-0">
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img
+                src="/images/over-crowded.png"
+                className="w-[200px] h-[156px]"
+              />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">Over Crowded</h2>
+                <p>
+                  Occurs when there is insufficient room to fit all teeth
+                  leading to plaque accumulation.
+                </p>
+              </div>
+            </div>
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img
+                src="/images/open-bites.png"
+                className="w-[200px] h-[156px]"
+              />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">Open Bites</h2>
+                <p>
+                  Occurs when there is excessive space between upper and lower
+                  front teeth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img
+                src="/images/over-bite.png"
+                className="w-[200px] h-[156px]"
+              />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">Over bite</h2>
+                <p>Occurs when upper teeth covering lower teeth abnormally.</p>
+              </div>
+            </div>
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img
+                src="/images/under-bite.png"
+                className="w-[200px] h-[156px]"
+              />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">Under Bite</h2>
+                <p>Occurs when lower teeth bite over your front teeth.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="flex flex-col md:flex-row items-center gap-4">
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img
+                src="/images/cross-bite.png"
+                className="w-[200px] h-[156px]"
+              />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">Cross Bite</h2>
+                <p>Occurs when upper and lower jaws are misaligned.</p>
+              </div>
+            </div>
+            <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
+              <img src="/images/Diastema.png" className="w-[200px] h-[156px]" />
+              <div className="w-[210px] flex flex-col gap-4">
+                <h2 className="text-[#262261] text-xl">
+                  Gapped teeth (Diastema)
+                </h2>
+                <p>
+                  Occurs when spaces between teeth are too wide this can cause
+                  gum problem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* FAQs */}
+      <div
+        className="bg-white flex flex-col items-center gap-12 py-20"
+        id="faq"
+      >
+        <div className="w-full bg-[#FAF9F8] flex flex-col gap-6 items-center py-10 rounded-xl">
+          <span className="bg-white px-4 py-3 shadow-xl rounded-xl text-sm text-[#262261] flex items-center gap-1">
+            <img src="/images/faq.png" className="w-5 h-5" />
+            FAQs
+          </span>
+          {/* FAQ Select */}
+
+          <div className=" w-[100%] mx-auto md:w-[50%]">
+            <FaqAccordion />
+          </div>
+        </div>
+      </div>
+
+      {/* Footer */}
+      <div className="bg-white">
+        <Footer />
+      </div>
+    </>
   );
-}
+};
+
+export default Landing;

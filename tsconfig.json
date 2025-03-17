@@ -22,6 +22,23 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "components/viewCase/PatientInfoForm.tsx",
+    "components/forms/RequestOrthodontistForm.tsx",
+    "app/(root)/page.jsx",
+    "components/cards/CaseCard.jsx",
+    "components/modals/Delete.jsx",
+    "app/(root)/cases/[id]/page.jsx",
+    "next.config.js",
+    "app/auth/resetpassword/page.jsx",
+    "app/auth/setnewpassword/page.jsx",
+    "app/(root)/addcase/page.jsx",
+    "components/EmblaCarouselArrowButtons.jsx",
+    "components/cards/ContactCard.jsx"
+  ],
   "exclude": ["node_modules"]
 }
