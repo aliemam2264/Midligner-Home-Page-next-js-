@@ -189,14 +189,14 @@ const Landing = () => {
             transition={{ duration: 0.5 }}
             className="bg-white shadow-xl overflow-hidden rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
-            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+            <div className="flex flex-col w-[250px] md:w-[400px] gap-4 px-4 md:pl-0">
               <h2 className="text-[#262261] text-xl">Booking your 3D Scan</h2>
               <p>
                 Now you can schedule your transformation appointment and
                 experience the latest in dental technology with the Medit
                 intraoral scanner at one of our Mid.ligner affiliated clinics.
               </p>
-              <button className="bg-[#262261] text-white rounded-lg py-1 w-[263px]">
+              <button className="bg-[#262261] text-white text-[12px] md:text-[16px] rounded-lg py-1 w-[200px] md:w-[263px]">
                 Books 3D Scan Appointment
               </button>
             </div>
@@ -211,12 +211,12 @@ const Landing = () => {
           </motion.div>
 
           <motion.div
-            initial={isMobile ? {} : { opacity: 0, translateX: "-100%" }}
+            initial={isMobile ? {} : { opacity: 0, translateX: "100%" }}
             whileInView={isMobile ? {} : { opacity: 1, translateX: "0" }}
             transition={{ duration: 0.5 }}
             className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
-            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+            <div className="flex flex-col w-[250px] md:w-[400px] gap-4 pl-4 md:pl-0">
               <h2 className="text-[#262261] text-xl">
                 Get a Glimpse of Your Future Smile
               </h2>
@@ -227,7 +227,7 @@ const Landing = () => {
                 a comprehensive diagnosis, predicted results, and treatment
                 timeline.
               </p>
-              <button className="bg-[#262261] text-white rounded-lg py-1 w-[263px]">
+              <button className="bg-[#262261] text-white text-[12px] md:text-[16px] rounded-lg py-1 w-[200px] md:w-[263px]">
                 Books 3D Scan Appointment
               </button>
             </div>
@@ -247,7 +247,7 @@ const Landing = () => {
             transition={{ duration: 0.5 }}
             className="bg-white shadow-xl rounded-3xl flex flex-col gap-2 items-center md:flex-row justify-between p-4"
           >
-            <div className="flex flex-col w-[400px] gap-4 pl-4 md:pl-0">
+            <div className="flex flex-col w-[250px] md:w-[400px] gap-4 pl-4 md:pl-0">
               <h2 className="text-[#262261] text-xl">Step In. Smile Out!</h2>
               <p className="text-[#5F5E5D]">Production and Delivery</p>
               <p>
@@ -270,7 +270,7 @@ const Landing = () => {
 
       {/* treatable cases */}
       <div
-        className="bg-white flex flex-col items-center gap-12 py-20"
+        className="bg-[#ECEDF5] flex flex-col items-center gap-12 py-20"
         id="treatable-cases"
       >
         <span className="bg-white px-4 py-3 shadow-xl rounded-xl text-sm text-[#262261] flex items-center gap-1">
@@ -283,9 +283,9 @@ const Landing = () => {
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
                 src="/images/over-crowded.png"
-                className="w-[200px] h-[156px]"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
-              <div className="w-[210px] flex flex-col gap-4">
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">Over Crowded</h2>
                 <p>
                   Occurs when there is insufficient room to fit all teeth
@@ -296,9 +296,9 @@ const Landing = () => {
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
                 src="/images/open-bites.png"
-                className="w-[200px] h-[156px]"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
-              <div className="w-[210px] flex flex-col gap-4">
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">Open Bites</h2>
                 <p>
                   Occurs when there is excessive space between upper and lower
@@ -312,9 +312,9 @@ const Landing = () => {
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
                 src="/images/over-bite.png"
-                className="w-[200px] h-[156px]"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
-              <div className="w-[210px] flex flex-col gap-4">
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">Over bite</h2>
                 <p>Occurs when upper teeth covering lower teeth abnormally.</p>
               </div>
@@ -322,9 +322,9 @@ const Landing = () => {
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
                 src="/images/under-bite.png"
-                className="w-[200px] h-[156px]"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
-              <div className="w-[210px] flex flex-col gap-4">
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">Under Bite</h2>
                 <p>Occurs when lower teeth bite over your front teeth.</p>
               </div>
@@ -335,16 +335,19 @@ const Landing = () => {
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
               <img
                 src="/images/cross-bite.png"
-                className="w-[200px] h-[156px]"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
               />
-              <div className="w-[210px] flex flex-col gap-4">
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">Cross Bite</h2>
                 <p>Occurs when upper and lower jaws are misaligned.</p>
               </div>
             </div>
             <div className="bg-white shadow-sm rounded-xl flex items-center gap-4 p-4">
-              <img src="/images/Diastema.png" className="w-[200px] h-[156px]" />
-              <div className="w-[210px] flex flex-col gap-4">
+              <img
+                src="/images/Diastema.png"
+                className="w-[120px] h-[104px] md:w-[200px] md:h-[156px]"
+              />
+              <div className="w-[190px] md:w-[210px] flex flex-col gap-4">
                 <h2 className="text-[#262261] text-xl">
                   Gapped teeth (Diastema)
                 </h2>
@@ -363,14 +366,14 @@ const Landing = () => {
         className="bg-white flex flex-col items-center gap-12 py-20"
         id="faq"
       >
-        <div className="w-full bg-[#FAF9F8] flex flex-col gap-6 items-center py-10 rounded-xl">
+        <div className="w-full bg-[#FCFCFD] flex flex-col gap-6 items-center py-10 rounded-xl">
           <span className="bg-white px-4 py-3 shadow-xl rounded-xl text-sm text-[#262261] flex items-center gap-1">
             <img src="/images/faq.png" className="w-5 h-5" />
             FAQs
           </span>
           {/* FAQ Select */}
 
-          <div className=" w-[100%] mx-auto md:w-[50%]">
+          <div className="w-[100%] pl-8 md:pl-3 mx-auto md:w-[50%]">
             <FaqAccordion />
           </div>
         </div>

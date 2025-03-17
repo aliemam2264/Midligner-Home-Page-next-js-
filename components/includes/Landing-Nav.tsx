@@ -59,7 +59,7 @@ const LandingNavbar = () => {
         {/* Mobile Menu Button */}
         <button
           onClick={toggleMobileMenu}
-          className="lg:hidden p-2 mr-2 rounded-md text-black focus:outline-none"
+          className="lg:hidden p-2 rounded-md text-black focus:outline-none"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>

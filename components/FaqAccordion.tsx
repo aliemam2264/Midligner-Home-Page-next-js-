@@ -7,8 +7,8 @@ import {
 export function FaqAccordion() {
   return (
     <Accordion type="single" collapsible className="w-full">
-      <div className="flex flex-col md:flex-row mx-2 md:mx-0 gap-4">
-        <AccordionItem value="item-1" className="w-[380px] md:w-[450px]">
+      <div className="flex flex-col md:flex-row gap-4">
+        <AccordionItem value="item-1" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             Is there any pain during aligners treatment ?
           </AccordionTrigger>
@@ -16,7 +16,7 @@ export function FaqAccordion() {
             Usually 90% of patient do not need any pain killer.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-2" className="w-[380px] md:w-[450px]">
+        <AccordionItem value="item-2" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             How often should the patient wear aligners?
           </AccordionTrigger>
@@ -27,14 +27,14 @@ export function FaqAccordion() {
         </AccordionItem>
       </div>
 
-      <div className="flex flex-col md:flex-row mx-2 md:mx-0 gap-4">
-        <AccordionItem value="item-3" className="w-[380px] md:w-[450px]">
+      <div className="flex flex-col md:flex-row gap-4">
+        <AccordionItem value="item-3" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             How do you keep your aligners clean?
           </AccordionTrigger>
           <AccordionContent>Brush with warm water and soap.</AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-4" className="w-[380px] md:w-[450px]">
+        <AccordionItem value="item-4" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             What are the attachments and how do they work?
           </AccordionTrigger>
@@ -45,15 +45,15 @@ export function FaqAccordion() {
         </AccordionItem>
       </div>
 
-      <div className="flex flex-col md:flex-row mx-2 md:mx-0 gap-4">
-        <AccordionItem value="item-5" className="w-[380px] md:w-[450px]">
+      <div className="flex flex-col md:flex-row gap-4">
+        <AccordionItem value="item-5" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>How to apply attachments?</AccordionTrigger>
           <AccordionContent>
             Use same process of applying braces, so it is very simple process;
             no drilling, No Needle, just glow on the aligner.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-6" className="w-[380px] md:w-[450px]">
+        <AccordionItem value="item-6" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             What is IPR and its demand with midligner?
           </AccordionTrigger>
@@ -65,8 +65,8 @@ export function FaqAccordion() {
         </AccordionItem>
       </div>
 
-      <div className="flex flex-col md:flex-row mx-2 md:mx-0 gap-4">
-        <AccordionItem value="item-7" className="w-[380px] md:w-[450px]">
+      <div className="flex flex-col md:flex-row gap-4">
+        <AccordionItem value="item-7" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             Does this treatment affect your speech?
           </AccordionTrigger>
@@ -75,10 +75,7 @@ export function FaqAccordion() {
             but it takes couple of days maximum, to get back to normal.
           </AccordionContent>
         </AccordionItem>
-        <AccordionItem value="item-8" className="w-[380px] md:w-[450px]
-        
-        
-        ">
+        <AccordionItem value="item-8" className="w-[335px] md:w-[450px]">
           <AccordionTrigger>
             What food and beverage to avoid during treatment time?
           </AccordionTrigger>
